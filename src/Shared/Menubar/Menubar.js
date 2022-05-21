@@ -25,8 +25,7 @@ const Menubar = ({ children }) => {
                         <ul className="menu menu-horizontal">
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/'>Home</NavLink></li>
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/about'>About</NavLink></li>
-                            <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/service'>Service</NavLink></li>
-                            <li className='mr-20'><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/contact'>Contact</NavLink></li>
+                            <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/blogs'>Blogs</NavLink></li>
                             <li>{user ? <button className="rounded font-bold h-10 m-2 btn-outline btn-primary" onClick={logOut} >Sign Out</button> : <Link className="rounded font-bold h-10 m-2 btn-outline btn-primary border" to="/login">Login</Link>}</li>
                         </ul>
                     </div>
@@ -37,9 +36,8 @@ const Menubar = ({ children }) => {
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
                     <li><NavLink className='rounded p-4 m-2 h-10' to='/'>Home</NavLink></li>
+                    <li><NavLink className='rounded p-4 m-2 h-10' to='/blogs'>Blogs</NavLink></li>
                     <li><NavLink className='rounded p-4 m-2 h-10' to='/about'>About</NavLink></li>
-                    <li><NavLink className='rounded p-4 m-2 h-10' to='/service'>Service</NavLink></li>
-                    <li><NavLink className='rounded p-4 m-2 h-10' to='/contact'>Contact</NavLink></li>
                     <li>{user ? <button className="rounded font-bold h-10 m-2 btn-outline btn-primary" onClick={logOut} >Sign Out</button> : <Link className="rounded font-bold h-10 m-2 btn-outline btn-primary border" to="/login">Login</Link>}</li>
                 </ul>
 

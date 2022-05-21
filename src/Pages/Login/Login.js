@@ -45,10 +45,10 @@ const Login = () => {
     }
 
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex h-screen justify-center items-center mt-10'>
             <div className="card w-96 bg-base-100 shadow-md">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <h2 className="text-center text-2xl font-bold text-primary">Login</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -100,13 +100,13 @@ const Login = () => {
                             </label>
                             <div className='mb-4 text-center'> {setError}</div>
                         </div>
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                        <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p className='text-center'><small>New to Doctors Portal? <Link className='text-primary' to="/signUp">Create New Account</Link></small></p>
+                    <p className='text-center'><small>New to Express Car? <Link className='text-primary' to="/signUp">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline">Continue with Google
+                        className="btn btn-outline btn-primary">Continue with Google
                     </button>
                 </div>
             </div>

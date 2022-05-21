@@ -1,16 +1,19 @@
 import React from 'react';
+import picture from '../../Images/HomeDelivery.webp'
+import picture2 from '../../Images/auto.webp'
+import picture3 from '../../Images/Fast.jpg'
 
 const Reviews = () => {
     return (
         <div>
             <div className='mx-12 mt-16 mb-10'>
-                <h1 className='text-3xl font-bold'>Why do choose us</h1>
+                <h1 className='text-4xl font-bold text-primary'>Why do choose us</h1>
                 <p className='mt-4'>This is the best Car parts Company.<br />100% Original parts.</p>
 
 
                 <div className='grid lg:grid-cols-3 grid-cols-1 gap-10'>
                     <div className="card w-96 bg-base-100 shadow-md mt-10">
-                        <figure><img src={""} alt="Shoes" /></figure>
+                        <figure><img src={picture} alt="Shoes" /></figure>
                         <div className='flex'>
                             <div>
                                 <h2 className='text-2xl mt-8 ml-4 text-white bg-primary px-2 py-1 rounded-full'><i className="fa-solid fa-car"></i></h2>
@@ -29,7 +32,7 @@ const Reviews = () => {
                     </div>
 
                     <div className="card w-96 bg-base-100 shadow-md mt-10">
-                        <figure><img src={""} alt="Shoes" /></figure>
+                        <figure><img src={picture2} alt="Shoes" /></figure>
                         <div className='flex'>
                             <div>
                                 <h2 className='text-2xl mt-8 ml-4 text-white bg-primary px-2 py-1 rounded-full'><i className="fa-solid fa-bell"></i></h2>
@@ -48,7 +51,7 @@ const Reviews = () => {
                     </div>
 
                     <div className="card w-96 bg-base-100 shadow-md mt-10">
-                        <figure><img src={""} alt="Shoes" /></figure>
+                        <figure><img src={picture3} alt="Shoes" /></figure>
                         <div className='flex'>
                             <div>
                                 <h2 className='text-2xl mt-8 ml-4 text-white bg-primary px-2 py-1 rounded-full'><i className="fa-solid fa-car"></i></h2>

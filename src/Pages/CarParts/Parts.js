@@ -11,7 +11,7 @@ const Parts = ({ part }) => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title font-bold text-2xl text-indigo-400">{name}</h2>
                     <p>{description}</p>
-                    <p className='font-bold'>Price: <span className='text-indigo-500'>${price}</span></p>
+                    <p className='font-bold'>Per Price: <span className='text-indigo-500'>${price}</span></p>
                     <p className='font-bold'>Minimum quantity: <span className='text-indigo-500'>{minQuantity}</span></p>
                     <p className='font-bold'>Available Quantity: <span className='text-indigo-500'>{avaiQuantity}</span></p>
                     <div className="card-actions">
