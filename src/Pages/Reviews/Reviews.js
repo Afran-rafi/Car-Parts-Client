@@ -3,7 +3,7 @@ import React from 'react';
 const Reviews = () => {
     return (
         <div>
-            <div className='mx-12 mt-16 mb-20'>
+            <div className='mx-12 mt-16 mb-10'>
                 <h1 className='text-3xl font-bold'>Why do choose us</h1>
                 <p className='mt-4'>This is the best Car parts Company.<br />100% Original parts.</p>
 

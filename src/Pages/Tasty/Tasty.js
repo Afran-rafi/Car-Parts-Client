@@ -11,7 +11,7 @@ const Tasty = () => {
 
     return (
         <div>
-            <h2 className='text-center text-3xl text-primary font-bold underline'>Client says</h2>
+            <h2 className='text-center text-3xl text-primary font-bold underline mt-20'>Client says</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 tasty mx-12 gap-10'>
                 <Testimonial comment={description1} name="Winson Herry" address="california" img={people1}></Testimonial>
                 <Testimonial comment={description2} name="Steven Smith" address="New Youk" img={people2} ></Testimonial>

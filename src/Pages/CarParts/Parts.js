@@ -15,7 +15,7 @@ const Parts = ({ part }) => {
                     <p className='font-bold'>Minimum quantity: <span className='text-indigo-500'>{minQuantity}</span></p>
                     <p className='font-bold'>Available Quantity: <span className='text-indigo-500'>{avaiQuantity}</span></p>
                     <div className="card-actions">
-                        <button className="btn-sm btn-primary rounded text-xl">Buy Now<i className="fa-solid fa-cart-shopping ml-2"></i></button>
+                        <button className="btn-primary rounded px-6 py-2">Buy Now<i className="fa-solid fa-cart-shopping ml-2"></i></button>
                     </div>
                 </div>
             </div>

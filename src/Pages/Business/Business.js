@@ -2,7 +2,7 @@ import React from 'react';
 
 const Business = () => {
     return (
-        <div className='mt-16 bg-business p-10 '>
+        <div className='mt-16 bg-business p-10'>
             <h2 className='text-center text-primary text-5xl uppercase'>Millions Business Trust Us</h2>
             <p className='text-center text-3xl mt-4'> Try to understand users expectation</p>
             <div className='grid lg:grid-cols-4 grid-col-1 mt-10 gap-24'>
@@ -23,7 +23,7 @@ const Business = () => {
                     <p className='text-2xl text-secondary'>Feedbacks <i class="fa-solid fa-thumbs-up"></i></p>
                 </div>
             </div>
-            <div className='flex items-center justify-center shadow-md border p-8 mx-16 mt-10 bg-info text-white rounded business'>
+            <div className='flex items-center justify-between shadow-md border p-8 mt-10 bg-info text-white rounded business'>
                 <div>
                     <h2 className='text-3xl'>Have any question about us or get a products request.?</h2>
                     <p className='text-2xl'>Don't hesitate to contact us</p>
