@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import useToken from '../../Hooks/useToken';
+import google from '../../Images/Google.png'
 
 const SignUp = () => {
 
@@ -45,7 +46,7 @@ const SignUp = () => {
             <div className='flex h-screen justify-center items-center mt-10 mb-10'>
                 <div className="card w-96 bg-base-100 shadow-md">
                     <div className="card-body">
-                        <h2 className="text-center text-2xl font-bold">Sign Up</h2>
+                        <h2 className="text-center text-2xl font-bold text-primary">Sign Up</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
 
                             <div className="form-control w-full max-w-xs">
@@ -121,13 +122,13 @@ const SignUp = () => {
                                 </label>
                                 <div className='mb-4 text-center'> {setError}</div>
                             </div>
-                            <input className='btn w-full max-w-xs text-white' type="submit" value="SignUp" />
+                            <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="SignUp" />
                         </form>
                         <p className='text-center'><small>Already Have An Account? <Link className='text-primary' to="/login">Login</Link></small></p>
                         <div className="divider">OR</div>
                         <button
                             onClick={() => signInWithGoogle()}
-                            className="btn btn-outline">Continue with Google
+                            className="btn btn-outline btn-primary">Continue with Google
                         </button>
                     </div>
                 </div>
