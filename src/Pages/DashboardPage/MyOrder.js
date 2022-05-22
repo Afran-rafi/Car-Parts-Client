@@ -45,8 +45,8 @@ const MyOrder = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -78,7 +78,7 @@ const MyOrder = () => {
                                     }
                                 </td>
 
-                                <td>{!order.transactionId && <button onClick={() => handleDeleteOrder(order._id)} className='text-red-500 font-bold'><i class="fa-solid fa-trash-can"></i></button>}</td>
+                                <td>{!order.transactionId && <button onClick={() => handleDeleteOrder(order._id)} className='text-red-500 font-bold'><i className="fa-solid fa-trash-can"></i></button>}</td>
 
                             </tr>)
                         }

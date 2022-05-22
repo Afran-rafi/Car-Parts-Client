@@ -1,12 +1,13 @@
 import React from 'react';
 import './Testimonial.css'
 
-const Testimonial = ({ img, comment, name, address }) => {
+const Testimonial = ({ review }) => {
+    const { description, name, address, img } = review
     return (
         <div className='mt-10'>
             <div className="card w-96 bg-base-100 shadow-md p-4">
                 <div className="card-body">
-                    <p>{comment}</p>
+                    <p>{description}</p>
                 </div>
                 <div className='flex items-center'>
                     <div className="avatar ml-8">
