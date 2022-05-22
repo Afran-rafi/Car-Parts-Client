@@ -19,7 +19,7 @@ const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    // const [token] = useToken(user || gUser)
+    const [token] = useToken(user || gUser)
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
@@ -31,16 +31,11 @@ const Login = () => {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
-    // useEffect(() => {
-    //     if (token) {
-    //         navigate('/')
-    //     }
-    // }, [token, from, navigate])
-
-    if (user || gUser) {
-        console.log(user || gUser)
-        navigate('/purchase')
-    }
+    useEffect(() => {
+        if (token) {
+            navigate('/')
+        }
+    }, [token, from, navigate])
 
     if (loading || gLoading) {
         return <Loading></Loading>
