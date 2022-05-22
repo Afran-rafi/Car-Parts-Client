@@ -8,19 +8,19 @@ const Business = () => {
             <div className='grid lg:grid-cols-4 grid-col-1 mt-10 gap-24'>
                 <div className='flex items-center flex-col '>
                     <p className='text-5xl'>50+</p>
-                    <p className='text-2xl text-secondary'>Countries <i class="fa-solid fa-earth-americas"></i></p>
+                    <p className='text-2xl text-secondary'>Countries <i className="fa-solid fa-earth-americas"></i></p>
                 </div>
                 <div className='flex items-center flex-col'>
                     <p className='text-5xl'>500+</p>
-                    <p className='text-2xl text-secondary'>Complete Projects <i class="fa-solid fa-computer"></i></p>
+                    <p className='text-2xl text-secondary'>Complete Projects <i className="fa-solid fa-computer"></i></p>
                 </div>
                 <div className='flex items-center flex-col'>
                     <p className='text-5xl'>350+</p>
-                    <p className='text-2xl text-secondary'>Happy Client <i class="fa-solid fa-people-group"></i></p>
+                    <p className='text-2xl text-secondary'>Happy Client <i className="fa-solid fa-people-group"></i></p>
                 </div>
                 <div className='flex items-center flex-col'>
                     <p className='text-5xl'>450+</p>
-                    <p className='text-2xl text-secondary'>Feedbacks <i class="fa-solid fa-thumbs-up"></i></p>
+                    <p className='text-2xl text-secondary'>Feedbacks <i className="fa-solid fa-thumbs-up"></i></p>
                 </div>
             </div>
             <div className='flex items-center justify-between shadow-md border p-8 mt-10 bg-info text-white rounded business'>

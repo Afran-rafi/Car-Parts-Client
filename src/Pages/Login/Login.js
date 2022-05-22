@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 import Loading from '../../Shared/Loading/Loading';
+import google from '../../Images/Google.png'
 
 const Login = () => {
     const [
@@ -18,7 +19,7 @@ const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const [token] = useToken(user || gUser)
+    // const [token] = useToken(user || gUser)
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
@@ -30,11 +31,16 @@ const Login = () => {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
-    useEffect(() => {
-        if (token) {
-            navigate('/')
-        }
-    }, [token, from, navigate])
+    // useEffect(() => {
+    //     if (token) {
+    //         navigate('/')
+    //     }
+    // }, [token, from, navigate])
+
+    if (user || gUser) {
+        console.log(user || gUser)
+        navigate('/purchase')
+    }
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -106,7 +112,7 @@ const Login = () => {
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline btn-primary">Continue with Google
+                        className="btn btn-outline btn-primary"><img className='mr-4' src={google} alt="" /> Continue with Google
                     </button>
                 </div>
             </div>

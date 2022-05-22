@@ -25,8 +25,15 @@ const Menubar = ({ children }) => {
                         <ul className="menu menu-horizontal">
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/'>Home</NavLink></li>
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/about'>About</NavLink></li>
+                            <li>{user && <Link className='rounded p-4 m-2 h-10 font-bold' to='/dashboard'>Dashboard</Link>}</li>
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/blogs'>Blogs</NavLink></li>
-                            <li>{user ? <button className="rounded font-bold h-10 m-2 btn-outline btn-primary" onClick={logOut} >Sign Out</button> : <Link className="rounded font-bold h-10 m-2 btn-outline btn-primary border" to="/login">Login</Link>}</li>
+                            <li className='font-bold text-green-500'>
+                                {user && <h2>{user.displayName}</h2>}</li>
+                            <li>{user ?
+                                <button className="rounded font-bold h-10 m-2 border btn-outline btn-primary" onClick={logOut} >Sign Out</button>
+                                :
+                                <Link className="rounded font-bold h-10 m-2 btn-outline btn-primary border" to="/login">Login</Link>}
+                            </li>
                         </ul>
                     </div>
                 </div>
