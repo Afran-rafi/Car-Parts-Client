@@ -40,7 +40,8 @@ const PurchasePage = () => {
         const quantity = quantityRef.current.value
         const email = e.target.email.value
         const name = e.target.name.value
-        const addOrder = { name, email, quantity, phone, address }
+        const price = e.target.price.value
+        const addOrder = { name, email, quantity, phone, address, price }
 
         fetch('http://localhost:5000/myOrder', {
             method: 'POST',
@@ -79,6 +80,12 @@ const PurchasePage = () => {
                         <span className="label-text">Quantity</span>
                     </label>
                     <input onBlur={handleQuantity} ref={quantityRef} type="number" placeholder={`Min Quantity ${minQuantity}`} className="input input-bordered input-primary w-96 max-w-xs font-bold" name='quantity' />
+                </div>
+                <div>
+                    <label className="label">
+                        <span className="label-text">Price</span>
+                    </label>
+                    <input type="number" className="input input-bordered input-primary w-96 max-w-xs font-bold" name='price' value={price} />
                 </div>
                 <div>
                     <label className="label">

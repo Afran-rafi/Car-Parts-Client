@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
@@ -27,6 +27,22 @@ const MyOrder = () => {
                 .then(data => setOrders(data))
         }
     }, [user])
+
+    const handleDeleteOrder = id => {
+        const proceed = window.confirm(`Are You sure You Want To Delete Your Order.?`);
+        if (proceed) {
+            const url = `http://localhost:5000/myOrder/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                })
+        }
+    }
+
     return (
         <div>
             <div class="overflow-x-auto">
@@ -52,15 +68,26 @@ const MyOrder = () => {
                                 <td>{order.quantity}</td>
                                 <td>{order.address}</td>
                                 <td>{order.phone}</td>
-                                <td><button className='text-green-500 font-bold'>Pay<i class="fa-solid fa-sack-dollar"></i></button></td>
-                                <td><button className='text-red-500 font-bold'><i class="fa-solid fa-trash-can"></i></button></td>
+
+                                <td>{(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>Pay</button></Link>}
+                                    {(order.price && order.paid) &&
+                                        <div>
+                                            <span className='text-success'>Paid</span> <br />
+                                            <span className='text-red-500'>{order.transactionId}</span>
+                                        </div>
+                                    }
+                                </td>
+
+                                <td>{!order.transactionId && <button onClick={() => handleDeleteOrder(order._id)} className='text-red-500 font-bold'><i class="fa-solid fa-trash-can"></i></button>}</td>
+
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 
 export default MyOrder;
+

@@ -25,8 +25,8 @@ const Menubar = ({ children }) => {
                         <ul className="menu menu-horizontal">
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/'>Home</NavLink></li>
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/about'>About</NavLink></li>
-                            <li>{user && <Link className='rounded p-4 m-2 h-10 font-bold' to='/dashboard'>Dashboard</Link>}</li>
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/blogs'>Blogs</NavLink></li>
+                            <li>{user && <NavLink className='rounded p-4 m-2 h-10 font-bold' to='/dashboard'>Dashboard</NavLink>}</li>
                             <li className='font-bold text-green-500'>
                                 {user && <h2>{user.displayName}</h2>}</li>
                             <li>{user ?
