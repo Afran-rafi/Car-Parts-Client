@@ -7,7 +7,7 @@ const Testimonial = ({ review }) => {
         <div className='mt-10'>
             <div className="card w-96 bg-base-100 shadow-md p-4">
                 <div className="card-body">
-                    <p>{description}</p>
+                    <p><i class="fa-solid fa-quote-left"></i>{description}<i class="fa-solid fa-quote-right"></i></p>
                 </div>
                 <div className='flex items-center'>
                     <div className="avatar ml-8">

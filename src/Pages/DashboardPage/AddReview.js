@@ -6,6 +6,7 @@ const AddReview = () => {
     const nameRef = useRef('')
     const descriptionRef = useRef('')
     const addressRef = useRef('')
+    const ratingsRef = useRef('')
 
     const handleReview = (e) => {
         e.preventDefault()
@@ -13,8 +14,9 @@ const AddReview = () => {
         const name = nameRef.current.value
         const description = descriptionRef.current.value
         const img = imgRef.current.value
+        const rating = ratingsRef.current.value
 
-        const addReview = { name, img, description, address }
+        const addReview = { name, img, description, address, rating }
 
         fetch('http://localhost:5000/review', {
             method: 'POST',
@@ -45,6 +47,12 @@ const AddReview = () => {
                         <span className="label-text">description</span>
                     </label>
                     <input ref={descriptionRef} type="text" placeholder="Your Description" className="input input-bordered input-primary w-96 max-w-xs font-bold" name="description" required />
+                </div>
+                <div>
+                    <label className="label">
+                        <span className="label-text">Ratings</span>
+                    </label>
+                    <input ref={ratingsRef} type="number" placeholder="Out of 5" className="input input-bordered input-primary w-96 max-w-xs font-bold" name="ratings" required />
                 </div>
                 <div>
                     <label className="label">
