@@ -7,8 +7,8 @@ const Testimonial = ({ review }) => {
         <div className='mt-10'>
             <div className="card w-96 bg-base-100 shadow-md p-4">
                 <div className="card-body">
-                    <p><i class="fa-solid fa-quote-left"></i>{description}<i class="fa-solid fa-quote-right"></i></p>
-                    <p className=''>Ratings: <span className='text-secondary font-bold'>{rating}</span> <i class="fa-solid fa-star text-warning text-sm"></i></p>
+                    <p><i className="fa-solid fa-quote-left"></i>{description}<i className="fa-solid fa-quote-right"></i></p>
+                    <p className=''>Ratings: <span className='text-secondary font-bold'>{rating}</span> <i className="fa-solid fa-star text-warning text-sm"></i></p>
                 </div>
                 <div className='flex items-center'>
                     <div className="avatar ml-8">

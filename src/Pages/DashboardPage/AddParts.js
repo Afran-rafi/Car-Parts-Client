@@ -40,9 +40,9 @@ const AddParts = () => {
             <form onSubmit={handleAddParts} className='flex justify-center items-center flex-col mt-4'>
                 <div>
                     <label className="label">
-                        <span className="label-text">Img</span>
+                        <span className="label-text">Img URL</span>
                     </label>
-                    <input ref={imgRef} type="text" placeholder="Enter Your Image" className="input input-bordered input-primary w-96 max-w-xs font-bold" name="image" required />
+                    <input ref={imgRef} type="text" placeholder="Enter Your Image URL" className="input input-bordered input-primary w-96 max-w-xs font-bold" name="image" required />
                 </div>
                 <div>
                     <label className="label">
@@ -74,7 +74,7 @@ const AddParts = () => {
                     </label>
                     <input ref={avaiQuantityRef} type="text" placeholder="Available Quantity" className="input input-bordered input-primary w-96 max-w-xs" name='avaiQuantity' required />
                 </div>
-                <button className='btn btn-primary w-80 mt-5'>Add a Review</button>
+                <button className='btn btn-primary w-80 mt-5'>Add a CarParts</button>
             </form>
         </div>
     );

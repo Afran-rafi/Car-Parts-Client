@@ -10,14 +10,14 @@ const Profile = ({ profile }) => {
 
     return (
         <div>
-            <div class="card card-side bg-base-100  flex items-center">
-                <div class="avatar">
-                    <div class="w-56 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ml-8">
+            <div className="card card-side bg-base-100  flex items-center">
+                <div className="avatar">
+                    <div className="w-56 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 ml-8">
                         <img src={img} alt="" />
                     </div>
                 </div>
-                <div class="card-body ml-12">
-                    <h2 class="card-title text-3xl">Name: {user.displayName}</h2>
+                <div className="card-body ml-12">
+                    <h2 className="card-title text-3xl">Name: {user.displayName}</h2>
                     <p><span className='font-bold'>Email:</span> {user.email}</p>
                     <p><span className='font-bold'>Education:</span> {education}</p>
                     <p><span className='font-bold'>Location: </span> {location}</p>

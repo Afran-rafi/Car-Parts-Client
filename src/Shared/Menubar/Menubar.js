@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Menubar.css'
-import logo from '../../Images/logo.jpg'
+import logo from '../../Images/logo.png'
 const Menubar = ({ children }) => {
     const [user] = useAuthState(auth);
     const logOut = () => {

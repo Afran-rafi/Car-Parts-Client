@@ -28,8 +28,8 @@ const UserCollection = ({ user, refetch, index }) => {
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs btn-accent text-white">Make Admin</button>}</td>
-            <td><button class="text-white bg-red-500 px-2 py-1 rounded"><i class="fa-solid fa-trash-can"></i></button></td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs btn-accent text-white">Make Admin</button>}</td>
+            <td><button className="text-white bg-red-500 px-2 py-1 rounded"><i className="fa-solid fa-trash-can"></i></button></td>
         </tr>
     );
 };
