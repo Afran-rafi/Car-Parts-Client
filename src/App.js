@@ -19,9 +19,9 @@ import AddProfile from './Pages/AddProfile/AddProfile';
 import UpdateProfile from './Pages/UpdateProfile/UpdateProfile';
 import AllOrders from './Pages/DashboardPage/AllOrders';
 import RequireAdmin from './Shared/RequireAdmin/RequireAdmin';
-import AllParts from './Pages/DashboardPage/AllParts';
 import ManageParts from './Pages/DashboardPage/ManageParts';
 import AllUser from './Pages/DashboardPage/AllUser';
+import AddParts from './Pages/DashboardPage/AddParts';
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
             <Route path='/dashboard/profile' element={<MyProfile></MyProfile>}></Route>
             <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
             <Route path='/dashboard/allOrder' element={<RequireAdmin><AllOrders></AllOrders></RequireAdmin>}></Route>
-            <Route path='/dashboard/addParts' element={<RequireAdmin><AllParts></AllParts></RequireAdmin>}></Route>
+            <Route path='/dashboard/addParts' element={<RequireAdmin><AddParts></AddParts></RequireAdmin>}></Route>
             <Route path='/dashboard/manageParts' element={<RequireAdmin><ManageParts></ManageParts></RequireAdmin>}></Route>
             <Route path='/dashboard/allUser' element={<RequireAdmin><AllUser></AllUser></RequireAdmin>}></Route>
           </Route>
