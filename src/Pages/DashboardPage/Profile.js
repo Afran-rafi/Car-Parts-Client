@@ -7,6 +7,7 @@ const Profile = ({ profile }) => {
     const [user] = useAuthState(auth)
     const { img, education, location, phone, linkedIn, github } = profile
 
+
     return (
         <div>
             <div class="card card-side bg-base-100  flex items-center">
@@ -26,8 +27,9 @@ const Profile = ({ profile }) => {
                 </div>
             </div>
             <div className='flex justify-center'>
-                <Link to="/updateProfile"><button className='bg-primary px-4 py-2 text-white rounded'>Update Profile</button></Link>
+                <Link to="/updateProfile"><button className='bg-primary px-4 py-2 text-white'>UpdateProfile</button></Link>
             </div>
+
         </div>
     );
 };

@@ -32,7 +32,7 @@ function App() {
             <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
           </Route>
           <Route path='/addProfile' element={<AddProfile></AddProfile>}></Route>
-          <Route path='/UpdateProfile' element={<UpdateProfile></UpdateProfile>}></Route>
+          <Route path='/updateProfile' element={<UpdateProfile></UpdateProfile>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signUp' element={<SignUp></SignUp>}></Route>
           <Route path='*' element={<PageError></PageError>}></Route>

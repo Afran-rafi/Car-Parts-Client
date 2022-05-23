@@ -28,6 +28,7 @@ const MyProfile = () => {
                 .then(data => setProfiles(data))
         }
     }, [user])
+
     return (
         <div>
             <h2 className='text-center text-primary text-3xl'>My Profile</h2>
@@ -43,6 +44,7 @@ const MyProfile = () => {
             <div className='flex justify-center'>
                 <Link to='/addProfile'><button className='bg-primary px-4 py-2 text-white rounded mt-4'>Add Profile</button></Link>
             </div>
+
         </div>
     );
 };

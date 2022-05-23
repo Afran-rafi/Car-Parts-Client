@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -12,6 +13,7 @@ const AddProfile = () => {
     const phoneRef = useRef('')
     const linkedInRef = useRef('')
     const githubRef = useRef('')
+    const navigate = useNavigate()
 
     const handleProfile = (e) => {
         e.preventDefault()
@@ -36,6 +38,7 @@ const AddProfile = () => {
             .then(data => {
                 console.log('success', data);
                 toast.success("Your Profile is Successfully Add.!!")
+                navigate('/dashboard/profile')
                 e.target.reset();
             })
     }
