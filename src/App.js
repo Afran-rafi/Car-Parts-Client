@@ -31,7 +31,7 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/purchase/:id' element={<RequireAuth><PurchasePage></PurchasePage></RequireAuth>}></Route>
           <Route path='/dashboard' element={<Dashboard></Dashboard>}>
-            <Route index element={<MyOrder></MyOrder>}></Route>
+            <Route path='/dashboard/myOrder' element={<MyOrder></MyOrder>}></Route>
             <Route path='/dashboard/addReviews' element={<AddReview></AddReview>}></Route>
             <Route path='/dashboard/profile' element={<MyProfile></MyProfile>}></Route>
             <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>

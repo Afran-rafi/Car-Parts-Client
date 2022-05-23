@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
@@ -9,25 +10,15 @@ const PurchasePage = () => {
     const { id } = useParams();
     const [parts, setParts] = useState({});
     const { name, description, image, price, minQuantity, avaiQuantity } = parts
+    const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const [quantity, setQuantity] = useState(50)
     useEffect(() => {
         fetch(`http://localhost:5000/carParts/${id}`)
             .then(res => res.json())
             .then(data => setParts(data));
     }, [parts])
 
-
-    const [quantity, setQuantity] = useState(minQuantity)
-    const handleQuantity = (e) => {
-        setQuantity(e.target.value)
-
-        if (quantity >= minQuantity && quantity < avaiQuantity) {
-            toast.success("Your quantity is perfect")
-        }
-        else {
-            toast.error("Your quantity is not perfect Please check your quantity")
-        }
-    }
 
     const addressRef = useRef('')
     const phoneRef = useRef('')
@@ -58,6 +49,19 @@ const PurchasePage = () => {
             })
     }
 
+    const handlePlus = (e) => {
+        e.preventDefault()
+        if (quantity < avaiQuantity) {
+            setQuantity(quantity + 1)
+        }
+    }
+    const handleMinus = (e) => {
+        e.preventDefault()
+        if (quantity > minQuantity) {
+            setQuantity(quantity - 1)
+        }
+    }
+
 
     return (
         <div>
@@ -79,7 +83,11 @@ const PurchasePage = () => {
                     <label className="label">
                         <span className="label-text">Quantity</span>
                     </label>
-                    <input onBlur={handleQuantity} ref={quantityRef} type="number" placeholder={`Min Quantity ${minQuantity}`} className="input input-bordered input-primary w-96 max-w-xs font-bold" name='quantity' />
+                    <input ref={quantityRef} type="number" placeholder={`Min Quantity ${minQuantity}`} className="input input-bordered input-primary w-96 max-w-xs font-bold" name='quantity' value={quantity} />
+                    <div className='flex justify-center gap-7 mt-2'>
+                        <button className='text-white bg-green-400 btn-xs' onClick={handlePlus}>+</button>
+                        <button className='text-white bg-red-500 btn-xs' onClick={handleMinus}>-</button>
+                    </div>
                 </div>
                 <div>
                     <label className="label">
