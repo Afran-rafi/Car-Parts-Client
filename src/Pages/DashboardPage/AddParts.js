@@ -20,7 +20,7 @@ const AddParts = () => {
 
         const addReview = { name, image, description, price, minQuantity, avaiQuantity }
 
-        fetch('http://localhost:5000/addParts', {
+        fetch('https://arcane-journey-99305.herokuapp.com/addParts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

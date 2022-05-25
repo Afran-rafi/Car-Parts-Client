@@ -4,13 +4,16 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
 const MyOrder = () => {
     const [orders, setOrders] = useState([])
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/myOrder?email=${user.email}`, {
+            fetch(`https://arcane-journey-99305.herokuapp.com/myOrder?email=${user.email}`, {
                 method: "GET",
                 headers: {
                     "authorization": `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,20 +31,34 @@ const MyOrder = () => {
         }
     }, [user])
 
-    const handleDeleteOrder = id => {
-        const proceed = window.confirm(`Are You sure You Want To Delete Your Order.?`);
-        if (proceed) {
-            const url = `http://localhost:5000/myOrder/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    const remaining = orders.filter(order => order._id !== id);
-                    setOrders(remaining);
-                })
-        }
-    }
+
+
+    const handleModalDelete = (id) => {
+        confirmAlert({
+            title: `Confirm to Delete Product??`,
+            message: 'Are you sure to do this.',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        const url = `https://arcane-journey-99305.herokuapp.com/myOrder/${id}`;
+                        fetch(url, {
+                            method: 'DELETE'
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                const remaining = orders.filter(order => order._id !== id);
+                                setOrders(remaining);
+                            })
+                    }
+
+                },
+                {
+                    label: 'No',
+                }
+            ]
+        })
+    };
 
     return (
         <div>
@@ -61,7 +78,8 @@ const MyOrder = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr>
+                            orders.map((order, index) => <tr
+                                key={Math.random()}>
                                 <th>{index + 1}</th>
                                 <td>{order.name}</td>
                                 <td>{order.email}</td>
@@ -78,7 +96,7 @@ const MyOrder = () => {
                                     }
                                 </td>
 
-                                <td>{!order.transactionId && <button onClick={() => handleDeleteOrder(order._id)} className='text-red-500 font-bold'><i className="fa-solid fa-trash-can"></i></button>}</td>
+                                <td>{!order.transactionId && <button onClick={() => handleModalDelete(order._id)} className='text-red-500 font-bold'><i className="fa-solid fa-trash-can"></i></button>}</td>
 
                             </tr>)
                         }

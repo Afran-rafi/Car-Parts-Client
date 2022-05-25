@@ -27,7 +27,7 @@ const AddProfile = () => {
 
         const addProfile = { email, education, location, phone, img, linkedIn, github }
 
-        fetch('http://localhost:5000/addProfile', {
+        fetch('https://arcane-journey-99305.herokuapp.com/addProfile', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

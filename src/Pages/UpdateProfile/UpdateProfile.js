@@ -18,7 +18,7 @@ const UpdateProfile = () => {
         const updateProfile = { education, location, phone, linkedIn, github, img }
 
 
-        const url = `http://localhost:5000/myProfile?email=${user.email}`;
+        const url = `https://arcane-journey-99305.herokuapp.com/myProfile?email=${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

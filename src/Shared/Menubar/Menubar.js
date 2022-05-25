@@ -24,7 +24,7 @@ const Menubar = ({ children }) => {
                     <div className="flex-none hidden lg:block">
                         <ul className="menu menu-horizontal">
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/'>Home</NavLink></li>
-                            <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/about'>About</NavLink></li>
+                            <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/portfolio'>Portfolio</NavLink></li>
                             <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/blogs'>Blogs</NavLink></li>
                             <li>{user && <NavLink className='rounded p-4 m-2 h-10 font-bold' to='/dashboard'>Dashboard</NavLink>}</li>
                             <li className='font-bold text-green-500'>
@@ -42,10 +42,17 @@ const Menubar = ({ children }) => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
-                    <li><NavLink className='rounded p-4 m-2 h-10' to='/'>Home</NavLink></li>
-                    <li><NavLink className='rounded p-4 m-2 h-10' to='/blogs'>Blogs</NavLink></li>
-                    <li><NavLink className='rounded p-4 m-2 h-10' to='/about'>About</NavLink></li>
-                    <li>{user ? <button className="rounded font-bold h-10 m-2 btn-outline btn-primary" onClick={logOut} >Sign Out</button> : <Link className="rounded font-bold h-10 m-2 btn-outline btn-primary border" to="/login">Login</Link>}</li>
+                    <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/'>Home</NavLink></li>
+                    <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/portfolio'>Portfolio</NavLink></li>
+                    <li><NavLink className='rounded p-4 m-2 h-10 font-bold' to='/blogs'>Blogs</NavLink></li>
+                    <li>{user && <NavLink className='rounded p-4 m-2 h-10 font-bold' to='/dashboard'>Dashboard</NavLink>}</li>
+                    <li className='font-bold text-green-500'>
+                        {user && <h2>{user.displayName}</h2>}</li>
+                    <li>{user ?
+                        <button className="rounded font-bold h-10 m-2 border btn-outline btn-primary" onClick={logOut} >Sign Out</button>
+                        :
+                        <Link className="rounded font-bold h-10 m-2 btn-outline btn-primary border" to="/login">Login</Link>}
+                    </li>
                 </ul>
 
             </div>

@@ -1,27 +1,42 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 const DeleteParts = ({ product, index, refetch }) => {
     const { _id, name, price, minQuantity, avaiQuantity, image } = product;
 
     const handleDelete = () => {
-        const proceed = window.confirm(`Are You sure You Want To Delete ${name}.?`);
-        if (proceed) {
-            fetch(`http://localhost:5000/CarParts/${_id}`, {
-                method: 'DELETE',
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        confirmAlert({
+            title: `Confirm to Delete Product??`,
+            message: 'Are you sure to do this.',
+            buttons: [
+                {
+                    label: 'Yes',
+                    onClick: () => {
+                        fetch(`https://arcane-journey-99305.herokuapp.com/CarParts/${_id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                            }
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data);
+                                refetch()
+                                toast.success(`Product is deleted.`)
+                            })
+                    }
+
+                },
+                {
+                    label: 'No',
                 }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    refetch()
-                    toast.success(`Product is deleted.`)
-                })
-        }
+            ]
+        })
     }
+
     return (
 
         <tr>

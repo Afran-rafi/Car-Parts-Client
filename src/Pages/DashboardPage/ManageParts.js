@@ -6,7 +6,7 @@ import Loading from '../../Shared/Loading/Loading'
 import DeleteParts from './DeleteParts';
 
 const ManageParts = () => {
-    const { data: products, isLoading, refetch } = useQuery('product', () => fetch('http://localhost:5000/CarParts', {
+    const { data: products, isLoading, refetch } = useQuery('product', () => fetch('https://arcane-journey-99305.herokuapp.com/CarParts', {
         method: "GET",
     }).then(res => res.json()))
     if (isLoading) {
@@ -29,7 +29,7 @@ const ManageParts = () => {
                     <tbody>
                         {
                             products.map((product, index) => <DeleteParts
-                                key={product._key}
+                                key={product._Id}
                                 product={product}
                                 index={index}
                                 refetch={refetch}

@@ -14,7 +14,7 @@ const PurchasePage = () => {
 
     const [quantity, setQuantity] = useState(50)
     useEffect(() => {
-        fetch(`http://localhost:5000/carParts/${id}`)
+        fetch(`https://arcane-journey-99305.herokuapp.com/carParts/${id}`)
             .then(res => res.json())
             .then(data => setParts(data));
     }, [parts])
@@ -34,7 +34,7 @@ const PurchasePage = () => {
         const price = e.target.price.value
         const addOrder = { name, email, quantity, phone, address, price }
 
-        fetch('http://localhost:5000/myOrder', {
+        fetch('https://arcane-journey-99305.herokuapp.com/myOrder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -81,7 +81,7 @@ const PurchasePage = () => {
                 </div>
                 <div>
                     <label className="label">
-                        <span className="label-text">Quantity</span>
+                        <span className="label-text">Minimum Quantity</span>
                     </label>
                     <input ref={quantityRef} type="number" placeholder={`Min Quantity ${minQuantity}`} className="input input-bordered input-primary w-96 max-w-xs font-bold" name='quantity' value={quantity} />
                     <div className='flex justify-center gap-7 mt-2'>

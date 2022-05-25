@@ -4,7 +4,7 @@ import Parts from './Parts';
 const CarParts = () => {
     const [parts, setParts] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/carParts`)
+        fetch(`https://arcane-journey-99305.herokuapp.com/carParts`)
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

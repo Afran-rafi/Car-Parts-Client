@@ -18,7 +18,7 @@ const AddReview = () => {
 
         const addReview = { name, img, description, address, rating }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://arcane-journey-99305.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

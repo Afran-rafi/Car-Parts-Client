@@ -22,6 +22,8 @@ import RequireAdmin from './Shared/RequireAdmin/RequireAdmin';
 import ManageParts from './Pages/DashboardPage/ManageParts';
 import AllUser from './Pages/DashboardPage/AllUser';
 import AddParts from './Pages/DashboardPage/AddParts';
+import Portfolio from './Pages/Portfolio/Portfolio';
+import Blogs from './Pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path='/updateProfile' element={<UpdateProfile></UpdateProfile>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signUp' element={<SignUp></SignUp>}></Route>
+          <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
+          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
           <Route path='*' element={<PageError></PageError>}></Route>
         </Routes>
         <div className='mt-20'>
