@@ -64,8 +64,22 @@ const PurchasePage = () => {
 
 
     return (
-        <div>
-            <h2 className='text-indigo-500 text-center text-3xl mt-6'>Your CarParts Order Now <br /><span className='text-green-500 font-bold'>{name}</span></h2>
+        <div >
+            <div className='mt-10 flex justify-center'>
+                <div className="card w-96 bg-base-100 shadow-md">
+                    <figure className="px-10 pt-10">
+                        <img src={image} alt="Shoes" className="rounded-xl" />
+                    </figure>
+                    <div className="card-body items-center text-center">
+                        <h2 className="card-title font-bold text-2xl text-indigo-400">{name}</h2>
+                        <p>{description}</p>
+                        <p className='font-bold'>Per Price: <span className='text-indigo-500'>${price}</span></p>
+                        <p className='font-bold'>Minimum quantity: <span className='text-indigo-500'>{minQuantity} </span></p>
+                        <p className='font-bold'>Available Quantity: <span className='text-indigo-500'>{avaiQuantity}</span></p>
+                    </div>
+                </div>
+            </div >
+            <h2 className='text-indigo-500 text-center text-3xl mt-16'>Your CarParts Order Now <br /><span className='text-green-500 font-bold'>{name}</span></h2>
             <form onSubmit={handleOrder} className='flex justify-center items-center flex-col mt-4'>
                 <div>
                     <label className="label">
