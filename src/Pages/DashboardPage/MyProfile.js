@@ -42,7 +42,9 @@ const MyProfile = () => {
                 }
             </div>
             <div className='flex justify-center'>
-                <Link to='/addProfile'><button className='bg-primary px-4 py-2 text-white rounded mt-4'>Add Profile</button></Link>
+                {
+                    profiles[0] ? "" : <Link to="/addProfile"><button className='bg-primary px-4 py-2 text-white rounded mt-4'>Add Profile</button></Link>
+                }
             </div>
 
         </div>
